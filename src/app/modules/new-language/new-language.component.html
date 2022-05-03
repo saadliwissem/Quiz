@@ -1,0 +1,28 @@
+<h1>Add a new language</h1>
+<form action="" style="display: grid;">
+    <mat-form-field appearance="fill">
+        <mat-label>language name</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>language logo</mat-label><pre></pre>
+        <input matInput style="display: none;">
+        <input type="file">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>level</mat-label>
+        <mat-select>
+            <mat-option value="one">easy</mat-option>
+            <mat-option value="two">medium</mat-option>
+            <mat-option value="two">hard</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>note</mat-label>
+        <textarea matInput></textarea>
+    </mat-form-field>
+    <div class="buttons">
+        <button mat-flat-button color="primary">add</button>&nbsp;
+        <button mat-flat-button color="primary">cancel</button>
+    </div>
+</form>

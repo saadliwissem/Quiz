@@ -11,9 +11,17 @@ export class HeaderComponent implements OnInit {
   @Output() toggleSideBarforme: EventEmitter <any> = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
+  
   toggleSideBar(){
     this.toggleSideBarforme.emit();
+    setTimeout(()=>{
+      window.dispatchEvent(
+        new Event("resize")
+      );
+    },300)
   }
 
 }
