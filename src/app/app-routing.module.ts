@@ -1,3 +1,4 @@
+import { StudentsinfoComponent } from './shared/widgets/studentsinfo/studentsinfo.component';
 import { QCMComponent } from './modules/qcm/qcm.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
@@ -5,6 +6,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NewLanguageComponent } from './modules/new-language/new-language.component';
+import { StudentsComponent } from './modules/students/students.component';
 
 const routes: Routes = [{
   path:'',
@@ -13,7 +15,7 @@ const routes: Routes = [{
     path:'',
     component:DashboardComponent
   },{
-    path:'posts',
+    path:'note',
     component: PostsComponent
   },{
     path:'qcm',
@@ -22,6 +24,14 @@ const routes: Routes = [{
   },{
     path:'qcm/addLanguage',
     component: NewLanguageComponent,
+    
+  },{
+    path:'students',
+    component: StudentsComponent,
+    
+  },{
+    path:'studentsinfo',
+    component: StudentsinfoComponent,
     
   }]
 }];

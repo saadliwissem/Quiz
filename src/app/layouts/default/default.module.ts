@@ -18,6 +18,8 @@ import { NewLanguageComponent } from '../../modules/new-language/new-language.co
 import {  MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import {  MatInputModule } from '@angular/material/input';
+import { StudentsComponent } from '../../modules/students/students.component';
+import { StudentsNoteComponent } from 'src/app/modules/students-note/students-note.component';
 
 
 
@@ -31,6 +33,9 @@ import {  MatInputModule } from '@angular/material/input';
     PostsComponent,
     QCMComponent,
     NewLanguageComponent,
+    StudentsComponent,
+    StudentsNoteComponent,
+    
 
   ],
   imports: [
