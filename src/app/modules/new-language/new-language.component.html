@@ -1,28 +1,72 @@
-<h1>Add a new language</h1>
-<form action="" style="display: grid;">
-    <mat-form-field appearance="fill">
-        <mat-label>language name</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>language logo</mat-label><pre></pre>
-        <input matInput style="display: none;">
-        <input type="file">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>level</mat-label>
-        <mat-select>
-            <mat-option value="one">easy</mat-option>
-            <mat-option value="two">medium</mat-option>
-            <mat-option value="two">hard</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>note</mat-label>
-        <textarea matInput></textarea>
-    </mat-form-field>
-    <div class="buttons">
-        <button mat-flat-button color="primary">add</button>&nbsp;
-        <button mat-flat-button color="primary">cancel</button>
-    </div>
-</form>
+<mat-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+        <form [formGroup]="firstFormGroup">
+
+            <ng-template matStepLabel>basic Language info</ng-template>
+            <div class="from-group">
+                <mat-form-field>
+
+                    <mat-label for="exampleFormControlInput1" style="width:150px">Language Name</mat-label>
+                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" type="email" class="form-control" id="exampleFormControlInput1" required>
+                </mat-form-field>
+            </div>
+            <div class="from-group">
+                <mat-form-field>
+                    <mat-label>category</mat-label>
+                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" class="form-control" id="exampleFormControlInput1" required>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field>
+
+
+                <mat-select required name="selectProtType" placeholder="Select Protocol Type">
+                    <mat-option>10</mat-option>
+                    <mat-option>15</mat-option>
+                    <mat-option>20</mat-option>
+                    <mat-option>30</mat-option>
+                    <mat-option>40</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="from-group">
+                <mat-form-field>
+                    <mat-label>Language Name</mat-label>
+                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field>
+            </div>
+            <div class="from-group">
+                <mat-form-field>
+                    <mat-label>Language Name</mat-label>
+                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <p>Fill in all the blancks</p>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <div>
+                <p>Go to a different step to see the error state</p>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-stepper>

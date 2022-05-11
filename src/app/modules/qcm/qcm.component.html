@@ -1,7 +1,7 @@
-<h1>
+<h6>
     Languages
-</h1>
-<div> <span class="material-icons" style="color:blue">add</span><a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue">Add language</a></div>
+</h6><pre> </pre>
+<button> <span class="material-icons" style="color:blue">add</span><a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue">Add language</a></button>
 <pre></pre>
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="SourceData">
@@ -37,4 +37,11 @@
 
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
     </mat-paginator>
+</div>
+<pre>  </pre>
+<div class="cards">
+    <app-qcmcard></app-qcmcard>
+    <app-qcmcard></app-qcmcard>
+    <app-qcmcard></app-qcmcard>
+    <app-qcmcard></app-qcmcard>
 </div>

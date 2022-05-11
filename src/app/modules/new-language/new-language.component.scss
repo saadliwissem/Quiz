@@ -1,19 +1,20 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+@import"C:\Users\wissem\Desktop\dashbord\dashboardd\node_modules\bootstrap\dist\css\bootstrap.css";
+.mat-stepper-horizontal {
+    margin-top: 8px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
-button {
-    border-radius: 50px;
-    width: 80px;
+.mat-form-field {
+    margin-top: 16px;
 }
 
-.buttons {
-    display: inline;
+.form-control {
+    padding-right: 100%;
 }
 
 form {
-    margin-left: 30%;
-    margin-top: 10%;
+    margin-left: 120px;
 }
+
+input {}

@@ -34,6 +34,8 @@ export class QCMComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginateur: MatPaginator;
   displayColumns: string[] = ['id_language', 'name', 'language_rate', 'action'];
   SourceData = new MatTableDataSource<PeriodElement>(ELEMENTs_DATA);
+
+  
   constructor() {}
 
   ngOnInit() {

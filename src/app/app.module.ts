@@ -7,9 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-
-
-
+//I keep the new line
 
 @NgModule({
   declarations: [
@@ -17,8 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     
     
 
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -29,4 +25,5 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

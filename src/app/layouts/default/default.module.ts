@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { DashboardService } from './../../modules/dashboard.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -20,7 +21,11 @@ import { MatSelectModule } from '@angular/material/select';
 import {  MatInputModule } from '@angular/material/input';
 import { StudentsComponent } from '../../modules/students/students.component';
 import { StudentsNoteComponent } from 'src/app/modules/students-note/students-note.component';
-
+import {MatStepperModule} from '@angular/material/stepper';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { IgxStepperModule,IgxIconModule,IgxButtonModule} from "igniteui-angular";
+import { QcmcardComponent } from 'src/app/modules/qcmcard/qcmcard.component';
 
 
 
@@ -35,6 +40,9 @@ import { StudentsNoteComponent } from 'src/app/modules/students-note/students-no
     NewLanguageComponent,
     StudentsComponent,
     StudentsNoteComponent,
+    QcmcardComponent,
+    
+
     
 
   ],
@@ -51,7 +59,19 @@ import { StudentsNoteComponent } from 'src/app/modules/students-note/students-no
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    IgxStepperModule,
+    IgxIconModule,
+    IgxButtonModule,
+    
+    
+    
+    
 
    
   ],

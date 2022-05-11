@@ -26,7 +26,8 @@ import { StudentsinfoComponent } from '../widgets/studentsinfo/studentsinfo.comp
     CardComponent,
     PieComponent,
     TableComponent,
-    StudentsinfoComponent
+    StudentsinfoComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -47,7 +48,8 @@ import { StudentsinfoComponent } from '../widgets/studentsinfo/studentsinfo.comp
     AreaComponent,
     CardComponent,
     PieComponent,
-    StudentsinfoComponent
+    StudentsinfoComponent,
+    
   ]
 })
 export class SharedModule { }
