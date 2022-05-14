@@ -17,6 +17,7 @@ import {MatListModule} from '@angular/material/list';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TableComponent } from '../widgets/table/table.component';
 import { StudentsinfoComponent } from '../widgets/studentsinfo/studentsinfo.component';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -27,6 +28,7 @@ import { StudentsinfoComponent } from '../widgets/studentsinfo/studentsinfo.comp
     PieComponent,
     TableComponent,
     StudentsinfoComponent,
+    
     
   ],
   imports: [

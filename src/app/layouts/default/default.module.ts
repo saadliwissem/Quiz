@@ -26,8 +26,13 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { IgxStepperModule,IgxIconModule,IgxButtonModule} from "igniteui-angular";
 import { QcmcardComponent } from 'src/app/modules/qcmcard/qcmcard.component';
-
-
+import { AddStudentComponent } from 'src/app/shared/components/add-student/add-student.component';
+import { EditStudentComponent } from 'src/app/shared/components/edit-student/edit-student.component';
+import { StudentsListComponent } from 'src/app/shared/components/students-list/students-list.component';
+import {  MatChipsModule } from '@angular/material/chips';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -41,7 +46,9 @@ import { QcmcardComponent } from 'src/app/modules/qcmcard/qcmcard.component';
     StudentsComponent,
     StudentsNoteComponent,
     QcmcardComponent,
-    
+    AddStudentComponent,
+    EditStudentComponent,
+    StudentsListComponent,
 
     
 
@@ -68,6 +75,10 @@ import { QcmcardComponent } from 'src/app/modules/qcmcard/qcmcard.component';
     IgxStepperModule,
     IgxIconModule,
     IgxButtonModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatRadioModule,
+    MatButtonModule
     
     
     

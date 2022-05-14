@@ -46,6 +46,8 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit() {
     this.dataa.paginator = this.paginator;
+    //ready
+    
   }
 
 }

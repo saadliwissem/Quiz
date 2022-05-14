@@ -23,9 +23,15 @@ export class NewLanguageComponent implements OnInit {
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required],
+      seconddCtrl: ['', Validators.required],
+      thirdCtrl: ['', Validators.required],
+      fourthCtrl: ['', Validators.required],
+      sixthCtrl: ['', Validators.required],
     });
+    
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required],
+      fifthCtrl: ['', Validators.required],
     });
   }
 

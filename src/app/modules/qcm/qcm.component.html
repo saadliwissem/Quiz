@@ -1,47 +1,41 @@
 <h6>
     Languages
 </h6><pre> </pre>
-<button> <span class="material-icons" style="color:blue">add</span><a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue">Add language</a></button>
-<pre></pre>
-<div class="mat-elevation-z8">
-    <table mat-table [dataSource]="SourceData">
-
-        <!-- Position Column -->
-        <ng-container matColumnDef="id_language">
-            <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.id_language}} </td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> language </th>
-            <td mat-cell *matCellDef="let element"> <a href="#" style="text-decoration: none;color: black;"> {{element.name}}</a> </td>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="language_rate">
-            <th mat-header-cell *matHeaderCellDef> rate </th>
-            <td mat-cell *matCellDef="let element"> {{element.language_rate}} </td>
-        </ng-container>
-        <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef> action </th>
-            <td mat-cell *matCellDef="let element"><span class="material-icons "><a href="#" style="color:blue;text-decoration: none;">edit</a></span> &nbsp;&nbsp;<span class="material-icons"><a href="#" style="color:red;text-decoration: none;">delete</a></span> </td>
-        </ng-container>
+<a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue"><button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+    <mat-icon>add</mat-icon>
+  </button> Add language </a>
 
 
 
+<pre> </pre>
 
-        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
-    </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
-    </mat-paginator>
-</div>
-<pre>  </pre>
 <div class="cards">
-    <app-qcmcard></app-qcmcard>
-    <app-qcmcard></app-qcmcard>
-    <app-qcmcard></app-qcmcard>
-    <app-qcmcard></app-qcmcard>
+    <a href="">
+        <app-qcmcard></app-qcmcard>
+    </a>
+    <div style="padding:10px;"></div>
+    <a href="">
+        <app-qcmcard></app-qcmcard>
+    </a>
+    <div style="padding:10px;"></div>
+    <a href="">
+        <app-qcmcard></app-qcmcard>
+    </a>
+</div>
+<pre>
+
+</pre>
+<div class="cards">
+    <a href="">
+        <app-qcmcard></app-qcmcard>
+    </a>
+    <div style="padding:10px;"></div>
+    <a href="">
+        <app-qcmcard></app-qcmcard>
+    </a>
+    <div style="padding:10px;"></div>
+    <a href="">
+        <app-qcmcard></app-qcmcard>
+    </a>
 </div>
