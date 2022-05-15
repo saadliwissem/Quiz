@@ -20,22 +20,14 @@
                                 </div>
                                 <div class="row justify-content-between text-left">
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">amount of questions<span class="text-danger"> *</span></label>
-                                        <select formControlName="sixthCtrl" class="form-select" aria-label="Default select example">
-                                            <option selected value="1">10</option>
-                                            
-                                            <option value="3">15</option>
-                                            <option value="4">20</option>
-                                            <option value="5">25</option>
-                                            <option value="6">30</option>
-                                            <option value="7">35</option>
-                                            <option value="8">40</option>
+                                        <select formControlName="sixthCtrl" class="form-select" aria-label="Default select example" [(ngModel)]="selectedOption">
+                                            <option  *ngFor="let o of options" selected>{{o}}</option>
                                           </select>
                                     </div>
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">score to pass%<span class="text-danger"> *</span></label>
                                         <input formControlName="thirdCtrl" type="text" id="mob" name="mob" placeholder="score to pass" required>
                                     </div>
                                 </div>
-
                                 <div class="row justify-content-between text-left">
                                     <div class="form-floating">
                                         <textarea formControlName="fourthCtrl" class="form-control" placeholder="Leave a comment here" id="floatingTextarea" required></textarea>
@@ -49,7 +41,7 @@
                 </div>
             </div>
 
-            <button mat-button matStepperNext>next 
+            <button mat-button matStepperNext (click)="print()">next 
                 <span mat-mini-fab color="" aria-label="Example icon button with a plus one icon">
                     <mat-icon>arrow_right</mat-icon></span>
             </button>
@@ -59,23 +51,25 @@
         <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>language Design</ng-template>
             <div class="container-fluid px-1 py-5 mx-auto">
-                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                    <div class="card">
-                        <div class="form-card">
-                            <div class="row justify-content-between text-left">
-                                <div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                        <div class="card">
+                            <div class="form-card">
+                                <div class="row justify-content-between text-left">
+                                    <div>
 
-                                    <label for="formFileLg" class="form-label">add language logo</label>
-                                    <input formControlName="secondCtrl" class="form-control form-control-lg" id="formFileLg" type="file">
+                                        <label for="formFileLg" class="form-label">add language logo</label>
+                                        <input formControlName="secondCtrl" class="form-control form-control-lg" id="formFileLg" type="file">
 
-                                </div>
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">language category<span class="text-danger"> *</span></label>
-                                    <select formControlName="fifthCtrl" class="form-select" aria-label="Default select example">
+                                    </div>
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">language category<span class="text-danger"> *</span></label>
+                                        <select formControlName="fifthCtrl" class="form-select" aria-label="Default select example">
                                         <option selected value="1">web</option>
                                         
                                         <option value="2">programmation</option>
                                         <option value="3">Design</option>
                                       </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -90,13 +84,55 @@
             </div>
         </form>
     </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>language Questions</ng-template>
-        <p>You are now done.</p>
+    <mat-step [stepControl]="thirdFormGroup" errorMessage="fill in all Questions and answers.">
+        <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>language Questions</ng-template>
+            <div class="container-fluid px-1 py-5 mx-auto">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                        <div class="card">
+                            <div class="form-card">
+                                <div class="row justify-content-between text-left">
+
+                                    <div *ngFor="let o of printedOption;let i = index;" class="form-group col-sm-6 flex-column d-flex">
+                                        <label class="form-control-label px-3">Question number {{i+1}}:<span class="text-danger"> *</span></label>
+                                        <input formControlName="seventhCtrl" matInput type="text" id="fname" name="fname" placeholder="Question number {{i+1}}" required>
+
+                                        <div class="dropdown show" class="row d-flex justify-content-center">
+                                            <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="text-decoration: none;">
+                                                <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+                                                add answers
+                                            </a>
+
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                                set number of answers :<input (click)="printnbq(nbq.value)" #nbq type="number" min="2" max="6">
+                                                <div class="dropdown show" class="row d-flex justify-content-center">
+                                                    <div class="form-group col-sm-6 flex-column d-flex" *ngFor="let o of Anbq;let i = index;">
+                                                        <label class="form-control-label px-3">answer number :{{i+1}}<span class="text-danger"> *</span></label>
+                                                        <input matInput type="text" id="fname" name="fname" placeholder="answer number {{i+1}}" required>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+
         <div>
             <button mat-button matStepperPrevious><mat-icon>arrow_left</mat-icon>Back</button>
             <button mat-button (click)="stepper.reset()">Reset <mat-icon>autorenew</mat-icon></button>
-            <button mat-button matStepperPrevious style="float: right;">add the language <mat-icon>done</mat-icon></button>
+            <a href="/qcm" style="text-decoration: none;"><button mat-button style="float: right;">add the language <mat-icon>done</mat-icon></button></a>
         </div>
     </mat-step>
 

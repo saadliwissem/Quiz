@@ -51,7 +51,7 @@ export class StudentsinfoComponent implements OnInit {
           data: [
               ['DSI', 24],
               ['RX', 20],
-              ['MVW', 14],
+              ['MDW', 14],
               ['info1.1', 13],
               ['info1.2', 13],
              
