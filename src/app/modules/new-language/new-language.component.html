@@ -93,37 +93,36 @@
                         <div class="card">
                             <div class="form-card">
                                 <div class="row justify-content-between text-left">
+                                    <mat-accordion>
 
-                                    <div *ngFor="let o of printedOption;let i = index;" class="form-group col-sm-6 flex-column d-flex">
-                                        <label class="form-control-label px-3">Question number {{i+1}}:<span class="text-danger"> *</span></label>
-                                        <input formControlName="seventhCtrl" matInput type="text" id="fname" name="fname" placeholder="Question number {{i+1}}" required>
+                                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let o of printedOption;let i = index;">
 
-                                        <div class="dropdown show" class="row d-flex justify-content-center">
-                                            <a class=" dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="text-decoration: none;">
-                                                <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
-                                                add answers
-                                            </a>
+                                            <mat-expansion-panel-header>
 
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                                                set number of answers :<input (click)="printnbq(nbq.value)" #nbq type="number" min="2" max="6">
-                                                <div class="dropdown show" class="row d-flex justify-content-center">
-                                                    <div class="form-group col-sm-6 flex-column d-flex" *ngFor="let o of Anbq;let i = index;">
-                                                        <label class="form-control-label px-3">answer number :{{i+1}}<span class="text-danger"> *</span></label>
-                                                        <input matInput type="text" id="fname" name="fname" placeholder="answer number {{i+1}}" required>
-                                                    </div>
-                                                </div>
 
-                                            </div>
 
-                                        </div>
+                                                <mat-panel-description>
+                                                    <input class="inputs" type="text" formControlName="seventhCtrl" matInput type="text" id="fname" name="fname" placeholder="Question number {{i+1}}" required>
+                                                </mat-panel-description>
+                                            </mat-expansion-panel-header>
+                                            <app-drop-questions></app-drop-questions>
 
-                                    </div>
+
+                                        </mat-expansion-panel>
+
+                                    </mat-accordion>
+
                                 </div>
+
                             </div>
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </form>
 
 

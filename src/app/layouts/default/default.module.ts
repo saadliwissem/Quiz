@@ -33,7 +33,8 @@ import {  MatChipsModule } from '@angular/material/chips';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
-
+import { DropQuestionsComponent } from 'src/app/modules/drop-questions/drop-questions.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { MatButtonModule } from '@angular/material/button';
     AddStudentComponent,
     EditStudentComponent,
     StudentsListComponent,
-
+    DropQuestionsComponent,
     
 
   ],
@@ -78,8 +79,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatChipsModule,
     MatDatepickerModule,
     MatRadioModule,
-    MatButtonModule
-    
+    MatButtonModule,
+    MatExpansionModule
     
     
     

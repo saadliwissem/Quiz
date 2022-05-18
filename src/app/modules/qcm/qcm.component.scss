@@ -1,3 +1,4 @@
+@import "../../../../node_modules/bootstrap/dist/css/bootstrap.css";
 table {
     width: 100%;
 }
@@ -12,9 +13,25 @@ table {
 }
 
 .cards {
-    display: flex;
+    display: inline-flex;
+}
+
+.returncadinline {
+    display: block;
 }
 
 a {
     text-decoration: none;
+}
+
+.two {
+    display: block;
+}
+
+.d-flex {
+    float: right;
+}
+
+li {
+    display: inline;
 }

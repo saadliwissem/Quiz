@@ -1,41 +1,30 @@
 <h6>
     Languages
 </h6><pre> </pre>
-<a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue"><button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+
+<div class="one">
+    <div class="two">
+        <a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue"><button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
     <mat-icon>add</mat-icon>
   </button> Add language </a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
 
 
 
 <pre> </pre>
 
-
 <div class="cards">
-    <a href=" ">
-        <app-qcmcard></app-qcmcard>
-    </a>
-    <div style="padding:10px; "></div>
-    <a href=" ">
-        <app-qcmcard></app-qcmcard>
-    </a>
-    <div style="padding:10px; "></div>
-    <a href=" ">
-        <app-qcmcard></app-qcmcard>
-    </a>
-</div>
-<pre>
+    <div *ngFor="let c of card;let i=index">
+        <pre *ngIf="i>0&&i%3==0"></pre>
+        <app-qcmcard Lname="{{card[i].Lname}}" lversion="{{card[i].lversion}}" subtitle="{{card[i].subtitle}}" description="{{card[i].description}}">
+        </app-qcmcard>
 
-</pre>
-<div class="cards ">
-    <a href=" ">
-        <app-qcmcard></app-qcmcard>
-    </a>
-    <div style="padding:10px; "></div>
-    <a href=" ">
-        <app-qcmcard></app-qcmcard>
-    </a>
-    <div style="padding:10px; "></div>
-    <a href=" ">
-        <app-qcmcard></app-qcmcard>
-    </a>
+    </div>
+
 </div>

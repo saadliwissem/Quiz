@@ -22,7 +22,9 @@ export class NewLanguageComponent implements OnInit {
   selectedOption: string;
   printedOption: number[];
   options = [10,20,25,30,35,40];
-  Anbq:number[];
+  panelOpenState = false;$
+  
+
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
@@ -44,9 +46,7 @@ export class NewLanguageComponent implements OnInit {
     });
   }
  
-  printnbq(n:string){
-    this.Anbq=Array(Number(n));
-  }
+  
   print() {
     this.printedOption =Array(Number(this.selectedOption)) ;
     

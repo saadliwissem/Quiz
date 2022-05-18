@@ -10,6 +10,12 @@ export interface PeriodElement {
   language_rate: number;
   action: any;
 }
+export interface cards {
+  Lname: string;
+  lversion: number;
+  subtitle: String;
+  description:String ;
+}
 const ELEMENTs_DATA: PeriodElement[] = [
   {id_language: 1, name: 'java', language_rate: 3,action:1 },
   {id_language: 2, name: 'javaScript', language_rate: 4.5,action:1 },
@@ -22,6 +28,7 @@ const ELEMENTs_DATA: PeriodElement[] = [
   {id_language: 9, name: 'SQL', language_rate: 5,action:1},
   {id_language: 10, name: 'mongoDB', language_rate: 3,action:1  },
 ];
+
 @Component({
   selector: 'app-qcm',
   templateUrl: './qcm.component.html',
@@ -30,18 +37,31 @@ const ELEMENTs_DATA: PeriodElement[] = [
 
 
 export class QCMComponent implements OnInit {
-
+  
   @ViewChild(MatPaginator, { static: true }) paginateur: MatPaginator;
   displayColumns: string[] = ['id_language', 'name', 'language_rate', 'action'];
   SourceData = new MatTableDataSource<PeriodElement>(ELEMENTs_DATA);
 
-  
+  card:cards[]=[
+    {Lname:"java",lversion:17,subtitle:"esay",description:"beacoup du text "},
+    {Lname:"bootstrap",lversion:4,subtitle:"subtitle",description:"quelque text"},
+    {Lname:"java",lversion:5,subtitle:"subtitle",description:"quelque text"},
+    {Lname:"java",lversion:17,subtitle:"esay",description:"beacoup du text "}
+];
   constructor() {}
+
 
   ngOnInit() {
     this.SourceData.paginator = this.paginateur;
 
 
+
+
+
   }
 
+
+
+  
+  
 }

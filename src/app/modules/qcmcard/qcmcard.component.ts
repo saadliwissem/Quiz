@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {MDCRipple } from '@material/ripple';
+
 
 @Component({
   selector: 'app-qcmcard',
@@ -8,6 +9,10 @@ import {MDCRipple } from '@material/ripple';
 })
 
 export class QcmcardComponent implements OnInit {
+  @Input() Lname:string; 
+  @Input() lversion:String;
+  @Input() subtitle:string;
+  @Input() description:string;
 //read more/less button
 isReadMore = true;
 showText() {

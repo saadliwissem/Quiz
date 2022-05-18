@@ -7,13 +7,13 @@
     <mat-card-content>
         <div class="card-body">
             <h6>
-                language name : version
+                {{Lname}} : {{lversion}}
             </h6>
             <mat-card-subtitle>
-                subtitle
+                {{subtitle}}
             </mat-card-subtitle>
 
-            {{(readMore) ? longText : longText | slice:0:100}}
+            {{(readMore) ? description : description | slice:0:50}}
             <span *ngIf="!readMore">...
                 <a href="javascript:;" *ngIf="!readMore" (click)="readMore=true">Read More</a>
             </span>
