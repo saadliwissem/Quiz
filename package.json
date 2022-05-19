@@ -23,6 +23,7 @@
     "@angular/router": "~13.0.0",
     "@igniteui/material-icons-extended": "^2.10.0",
     "@material/card": "^14.0.0",
+    "angular-bootstrap-md": "^13.0.0",
     "bootstrap": "^5.1.3",
     "hammerjs": "^2.0.8",
     "highcharts-angular": "^3.0.0",

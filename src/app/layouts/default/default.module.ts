@@ -35,7 +35,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { DropQuestionsComponent } from 'src/app/modules/drop-questions/drop-questions.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatDatepickerModule,
     MatRadioModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MDBBootstrapModule.forRoot(),
+    MatGridListModule,
+
     
     
     

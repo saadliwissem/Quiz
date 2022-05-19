@@ -13,11 +13,7 @@ table {
 }
 
 .cards {
-    display: inline-flex;
-}
-
-.returncadinline {
-    display: block;
+    display: flex;
 }
 
 a {
@@ -26,6 +22,22 @@ a {
 
 .two {
     display: block;
+    position: fixed;
+    z-index: 2;
+    background-color: whitesmoke;
+    top: 64px;
+    width: 75%;
+    padding: 25px;
+}
+
+.longbar {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    background-color: whitesmoke;
+    top: 64px;
+    width: 100%;
+    padding: 25px;
 }
 
 .d-flex {

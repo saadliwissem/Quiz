@@ -1,30 +1,23 @@
+<div class="two">
+    <a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue"><button style="border-radius: 50%;" mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+    <mat-icon >add</mat-icon>
+  </button> Add language </a>
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+</div>
+<pre></pre>
 <h6>
     Languages
-</h6><pre> </pre>
-
-<div class="one">
-    <div class="two">
-        <a href="/qcm/addLanguage" style="text-decoration: none; font-size: larger;color:blue"><button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
-    <mat-icon>add</mat-icon>
-  </button> Add language </a>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-    </div>
-</div>
-
-
-
-
+</h6>
 <pre> </pre>
 
-<div class="cards">
-    <div *ngFor="let c of card;let i=index">
-        <pre *ngIf="i>0&&i%3==0"></pre>
-        <app-qcmcard Lname="{{card[i].Lname}}" lversion="{{card[i].lversion}}" subtitle="{{card[i].subtitle}}" description="{{card[i].description}}">
+<mat-grid-list cols="3" rowHeight="10:10">
+    <mat-grid-tile *ngFor="let c of card;let i=index">
+        <app-qcmcard Lname="{{card[i].Lname}}" lversion="{{card[i].lversion}}" subtitle="{{card[i].subtitle}}" description="{{card[i].description}}" imgsrc="{{card[i].imgsrc}}">
         </app-qcmcard>
+        <pre>  </pre>
+    </mat-grid-tile>
 
-    </div>
-
-</div>
+</mat-grid-list>

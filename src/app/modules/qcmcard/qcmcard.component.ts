@@ -13,6 +13,10 @@ export class QcmcardComponent implements OnInit {
   @Input() lversion:String;
   @Input() subtitle:string;
   @Input() description:string;
+  @Input() imgsrc:string;
+  @Input() category:string;
+  @Input() passScore:number;
+  @Input() bnrquestions:number;
 //read more/less button
 isReadMore = true;
 showText() {
