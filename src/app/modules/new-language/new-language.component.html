@@ -94,7 +94,7 @@
                             <div class="form-card">
                                 <div class="row justify-content-between text-left">
                                     <mat-accordion>
-                                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let o of printedOption;let i = index;">
+                                        <mat-expansion-panel *ngFor="let o of printedOption;let i = index;">
                                             <mat-expansion-panel-header>
                                                 <mat-panel-description>
                                                     <input class="inputs" type="text" formControlName="seventhCtrl" matInput type="text" id="fname" name="fname" placeholder="Question number {{i+1}}" required>

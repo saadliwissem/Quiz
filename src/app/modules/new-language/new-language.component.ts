@@ -22,7 +22,7 @@ export class NewLanguageComponent implements OnInit {
   selectedOption: string;
   printedOption: number[];
   options = [10,20,25,30,35,40];
-  panelOpenState = false;$
+  panelOpenState = false;
   
 
   constructor(private _formBuilder: FormBuilder) {}

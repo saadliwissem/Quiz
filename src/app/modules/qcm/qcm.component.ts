@@ -12,8 +12,6 @@ export interface cards {
   bnrquestions:number;
   passScore:number;
   category:string;
-
-
 }
 
 
