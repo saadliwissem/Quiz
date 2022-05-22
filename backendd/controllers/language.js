@@ -35,6 +35,7 @@ const createlanguage = (request, response) => {
             description: request.body.description,
             imgsrc: request.body.imgsrc,
             category: request.body.category,
+
         }, (error, language) => {
             if (error) {
                 response
@@ -51,7 +52,7 @@ const createlanguage = (request, response) => {
     //read specific language
 const readlanguage = (request, response) => {
         const languageid = request.params.languageid;
-        Cont
+        modeel
             .findById(languageid)
             .exec((err, language) => {
                 if (!language) {
@@ -100,7 +101,7 @@ const deletelanguage = (request, response) => {
 const updatelanguage = (request, response) => {
     const languageid = request.params.languageid;
 
-    Cont.findById(languageid)
+    modeel.findById(languageid)
         .exec((error, language) => {
             if (!language) {
                 return response

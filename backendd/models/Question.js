@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const c = mongoose.model("choise");
+
 const QuestionSchema = new mongoose.Schema({
     question: String,
     nbrAnswers: {

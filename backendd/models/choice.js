@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const choiseSchema = mongoose.Schema({
+const choiceSchema = mongoose.Schema({
     choice: { type: String, required: true },
     istrue: {
         type: Boolean,
@@ -12,4 +12,4 @@ const choiseSchema = mongoose.Schema({
     }
 
 });
-mongoose.model("choise", choiseSchema)
+mongoose.model("choice", choiceSchema)
