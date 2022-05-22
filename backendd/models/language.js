@@ -1,5 +1,38 @@
 const mongoose = require("mongoose");
-//const q = mongoose.model("question");
+
+
+//choice schema
+const choiceSchema = mongoose.Schema({
+    choice: { type: String, required: true },
+    istrue: {
+        type: Boolean,
+        //required: true,
+        default: false
+    },
+    img: String,
+});
+
+
+
+//question schema
+const QuestionSchema = new mongoose.Schema({
+    question: String,
+    nbrAnswers: {
+        type: Number,
+        required: true
+    },
+    nbrcorrectAnswers: {
+        type: Number,
+        required: true
+    },
+    img: String,
+
+    choice: [choiceSchema]
+});
+
+
+
+//language schema
 const languageSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -29,11 +62,6 @@ const languageSchema = new mongoose.Schema({
         type: String,
         default: "web"
     },
-    question: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'question'
-    }]
+    question: [QuestionSchema]
 });
-
-
 mongoose.model('language', languageSchema);

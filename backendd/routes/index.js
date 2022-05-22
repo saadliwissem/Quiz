@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const { getlanguages, createlanguage, readlanguage, deletelanguage, updatelanguage } = require('../controllers/language');
-const { getquestion, createquestion } = require('../controllers/Question')
+const { getAllquestion, createquestion, readquestion, updatequestion, deletequestion } = require('../controllers/Question')
+const { getAllchoice, createchoice, readchoice, updatechoice, deletechoice } = require("../controllers/choice")
+
 router.route('/languages')
     .get(getlanguages)
     .post(createlanguage);
@@ -13,12 +15,24 @@ router.route('/languages/:languageid')
 
 // define route for question
 router.route('/languages/:languageid/questions')
-    .get(getquestion)
+    .get(getAllquestion)
     .post(createquestion);
-/*
-router.route('/contacts/:contactid/address/:addressid')
-    .get(readAddress)
-    .put(updateAddress)
-    .delete(deleteAddress);*/
+
+router.route('/languages/:languageid/questions/:questionid')
+    .get(readquestion)
+    .put(updatequestion)
+    .delete(deletequestion);
+
+
+// define route for choices
+router.route('/languages/:languageid/questions/:questionid/choices')
+    .get(getAllchoice)
+    .post(createchoice)
+
+router.route('/languages/:languageid/questions/:questionid/choices/:choiceid')
+    .get(readchoice)
+    .put(updatechoice)
+    .delete(deletechoice);
+
 
 module.exports = router;
