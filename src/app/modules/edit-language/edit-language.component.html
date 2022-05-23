@@ -1,1 +1,16 @@
-<p>edit-language works!</p>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let question of Arrayamountofquestions;let i = index;">
+        <p>check the answer if it's true</p>
+        <mat-expansion-panel-header>
+            <mat-panel-description>
+                <input class="inputs" type="text" matInput type="text" id="fname" name="fname" placeholder="Question number {{i+1}}" required>
+                <a href="">
+                    <div style="position:absolute;margin-left: 91%;color:red ;">
+                        <mat-icon>delete</mat-icon>
+                    </div>
+                </a>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-editone-language></app-editone-language>
+    </mat-expansion-panel>
+</mat-accordion>

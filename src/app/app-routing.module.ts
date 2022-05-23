@@ -10,6 +10,7 @@ import { StudentsComponent } from './modules/students/students.component';
 import { AddStudentComponent } from './shared/components/add-student/add-student.component';
 import { EditStudentComponent } from './shared/components/edit-student/edit-student.component';
 import { StudentsListComponent } from './shared/components/students-list/students-list.component';
+import { EditLanguageComponent } from './modules/edit-language/edit-language.component';
 
 const routes: Routes = [{
   path:'',
@@ -27,6 +28,11 @@ const routes: Routes = [{
   },{
     path:'qcm/addLanguage',
     component: NewLanguageComponent,
+    
+  },
+  {
+    path:'qcm/editlanguage',
+    component: EditLanguageComponent,
     
   },{
     path:'students',
@@ -48,7 +54,8 @@ const routes: Routes = [{
     path:'studentlist',
     component: StudentsListComponent,
     
-  }]
+  },
+  ]
 }];
 
 @NgModule({

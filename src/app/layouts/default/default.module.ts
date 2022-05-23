@@ -37,6 +37,10 @@ import { DropQuestionsComponent } from 'src/app/modules/drop-questions/drop-ques
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTreeModule} from '@angular/material/tree';
+import { EditLanguageComponent } from 'src/app/modules/edit-language/edit-language.component';
+import { EditoneLanguageComponent } from 'src/app/modules/editone-language/editone-language.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +56,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     EditStudentComponent,
     StudentsListComponent,
     DropQuestionsComponent,
+    EditLanguageComponent,
+    EditoneLanguageComponent,
+
     
 
   ],
@@ -84,6 +91,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatExpansionModule,
     MDBBootstrapModule.forRoot(),
     MatGridListModule,
+    MatTreeModule
 
     
     

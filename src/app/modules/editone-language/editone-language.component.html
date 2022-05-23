@@ -1,0 +1,14 @@
+<div class="form-group col-sm-6 flex-column d-flex" *ngFor="let o of numberofanswers;let i = index;">
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="{{i+1}}" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" matInput class="inputs" placeholder="answer number {{i+1}}"><a href="">
+            <div style="position:absolute;margin-left: 92%;color:red ;">
+                <mat-icon>delete</mat-icon>
+            </div>
+        </a>
+        </label>
+    </div>
+</div>

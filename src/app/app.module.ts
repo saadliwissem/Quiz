@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EditLanguageComponent } from './modules/edit-language/edit-language.component';
 
 
 
@@ -14,7 +13,7 @@ import { EditLanguageComponent } from './modules/edit-language/edit-language.com
 @NgModule({
   declarations: [
     AppComponent,
-    EditLanguageComponent,
+    
     
     
   ],
