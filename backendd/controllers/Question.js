@@ -238,7 +238,6 @@ const deletequestion = (request, response) => {
             }
         });
 }
-
 module.exports = {
     getAllquestion,
     createquestion,

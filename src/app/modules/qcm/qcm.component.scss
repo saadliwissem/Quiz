@@ -1,21 +1,4 @@
 @import "../../../../node_modules/bootstrap/dist/css/bootstrap.css";
-table {
-    width: 100%;
-}
-
-.example-card {
-    max-width: 400px;
-}
-
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-}
-
-.cards {
-    display: flex;
-}
-
 a {
     text-decoration: none;
 }
@@ -26,7 +9,7 @@ a {
     z-index: 2;
     background-color: whitesmoke;
     top: 64px;
-    width: 75%;
+    width: 100%;
     padding: 25px;
 }
 
@@ -42,6 +25,7 @@ a {
 
 .d-flex {
     float: right;
+    padding-right: 400px;
 }
 
 li {

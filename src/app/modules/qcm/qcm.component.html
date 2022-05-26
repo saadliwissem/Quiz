@@ -7,17 +7,22 @@
         <button class="btn btn-primary" type="submit">Search</button>
     </form>
 </div>
-<pre></pre>
+<pre>
+
+
+
+</pre>
 <h6>
     Languages
 </h6>
 <pre> </pre>
 
-<mat-grid-list cols="3" rowHeight="10:10">
-    <mat-grid-tile *ngFor="let c of card;let i=index">
-        <app-qcmcard Lname="{{card[i].Lname}}" lversion="{{card[i].lversion}}" subtitle="{{card[i].subtitle}}" description="{{card[i].description}}" imgsrc="{{card[i].imgsrc}}">
-        </app-qcmcard>
-        <pre>  </pre>
-    </mat-grid-tile>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let c of card;let i=index">
+        <div class="card mb-3" style="max-width: 540px;">
+            <app-qcmcard Lname="{{card[i].name}}" lversion="{{card[i].version}}" passScore="{{card[i].passScore}}" description="{{card[i].description}}" imgsrc="{{card[i].imgsrc}}" category="{{card[i].category}}">
+            </app-qcmcard>
+        </div>
+    </div>
 
-</mat-grid-list>
+</div>

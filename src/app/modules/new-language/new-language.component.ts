@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import { LanguageService } from 'src/app/language.service';
+import{Language,question,choice} from '../../models/language.model'
 
 @Component({
   selector: 'app-new-language',
@@ -21,11 +24,13 @@ export class NewLanguageComponent implements OnInit {
   thirdFormGroup: FormGroup;
   selectedOption: string;
   printedOption: number[];
-  options = [10,20,25,30,35,40];
+  options = [2,10,20,25,30,35,40];
   panelOpenState = false;
-  
+  language:Language;
+  question:question;
+  choice:choice;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private LanguageService:LanguageService,private _formBuilder: FormBuilder ) {}
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -50,5 +55,14 @@ export class NewLanguageComponent implements OnInit {
   print() {
     this.printedOption =Array(Number(this.selectedOption)) ;
     
+  }
+  addlanguage(){
+    this.LanguageService.addLanguage(this.language,this.question,this.choice).subscribe({
+      next: (data)=>{
+        this.language=data;
+        console.log(data);
+      },
+      error:(e)=>console.log(e)
+    })
   }
 }

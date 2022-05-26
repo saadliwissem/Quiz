@@ -41,7 +41,6 @@ import {MatTreeModule} from '@angular/material/tree';
 import { EditLanguageComponent } from 'src/app/modules/edit-language/edit-language.component';
 import { EditoneLanguageComponent } from 'src/app/modules/editone-language/editone-language.component';
 
-
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -91,7 +90,8 @@ import { EditoneLanguageComponent } from 'src/app/modules/editone-language/edito
     MatExpansionModule,
     MDBBootstrapModule.forRoot(),
     MatGridListModule,
-    MatTreeModule
+    MatTreeModule,
+    
 
     
     

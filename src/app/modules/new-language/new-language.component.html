@@ -12,10 +12,10 @@
                                 <div class="row justify-content-between text-left">
                                     <div class="form-group col-sm-6 flex-column d-flex">
                                         <label class="form-control-label px-3">language name<span class="text-danger"> *</span></label>
-                                        <input formControlName="firstCtrl" matInput type="text" id="fname" name="fname" placeholder="language name" required>
+                                        <input formControlName="firstCtrl" matInput type="text" id="fname" name="name" placeholder="language name" required>
                                     </div>
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">language version<span class="text-danger"> *</span></label>
-                                        <input formControlName="seconddCtrl" matInput type="text" id="lname" name="lname" placeholder="language version" required>
+                                        <input formControlName="seconddCtrl" matInput type="text" id="lname" name="version" placeholder="language version" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
@@ -25,12 +25,12 @@
                                           </select>
                                     </div>
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">score to pass%<span class="text-danger"> *</span></label>
-                                        <input formControlName="thirdCtrl" type="text" id="mob" name="mob" placeholder="score to pass" required>
+                                        <input formControlName="thirdCtrl" type="text" id="mob" name="passScore" placeholder="score to pass" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-between text-left">
                                     <div class="form-floating">
-                                        <textarea formControlName="fourthCtrl" class="form-control" placeholder="Leave a comment here" id="floatingTextarea" required></textarea>
+                                        <textarea formControlName="fourthCtrl" class="form-control" name="description" id="floatingTextarea" required></textarea>
                                         <label for="floatingTextarea">description</label>
                                     </div>
                                 </div>
@@ -63,9 +63,8 @@
 
                                     </div>
                                     <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">language category<span class="text-danger"> *</span></label>
-                                        <select formControlName="fifthCtrl" class="form-select" aria-label="Default select example">
+                                        <select formControlName="fifthCtrl" class="form-select" aria-label="Default select example" name="category">
                                         <option selected value="1">web</option>
-                                        
                                         <option value="2">programmation</option>
                                         <option value="3">Design</option>
                                       </select>
@@ -97,7 +96,7 @@
                                         <mat-expansion-panel *ngFor="let o of printedOption;let i = index;">
                                             <mat-expansion-panel-header>
                                                 <mat-panel-description>
-                                                    <input class="inputs" type="text" formControlName="seventhCtrl" matInput type="text" id="fname" name="fname" placeholder="Question number {{i+1}}" required>
+                                                    <input class="inputs" type="text" formControlName="seventhCtrl" matInput type="text" id="fname" name="question" placeholder="Question number {{i+1}}" required>
                                                 </mat-panel-description>
                                             </mat-expansion-panel-header>
                                             <app-drop-questions></app-drop-questions>
@@ -123,7 +122,7 @@
         <div>
             <button mat-button matStepperPrevious><mat-icon>arrow_left</mat-icon>Back</button>
             <button mat-button (click)="stepper.reset()">Reset <mat-icon>autorenew</mat-icon></button>
-            <a href="/qcm" style="text-decoration: none;"><button mat-button style="float: right;">add the language <mat-icon>done</mat-icon></button></a>
+            <button mat-button style="float: right;" (click)="addlanguage()">add the language <mat-icon>done</mat-icon></button>
         </div>
     </mat-step>
 
