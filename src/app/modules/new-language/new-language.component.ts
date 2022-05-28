@@ -5,6 +5,7 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { LanguageService } from 'src/app/language.service';
 import{Language,question,choice} from '../../models/language.model'
 
+
 @Component({
   selector: 'app-new-language',
   templateUrl: './new-language.component.html',
@@ -25,11 +26,34 @@ export class NewLanguageComponent implements OnInit {
   selectedOption: string;
   printedOption: number[];
   options = [2,10,20,25,30,35,40];
+  categories=['web','programmation','design','security'];
+  selectedcategory:string;
   panelOpenState = false;
-  language:Language;
-  question:question;
-  choice:choice;
-
+  questions=[];
+  language:Language={
+    '_id':"",
+    name:"",
+    description:'',
+    version: 1,
+    passScore:70,
+    category:'',
+    nbrQuestions:20,
+    imgsrc:'',
+    question:[]
+  }
+  question:question={
+    question:'',
+    nbrAnswers:2,
+    nbrcorrectAnswers:1,
+    img:'',
+    choice:[]
+  }
+  choice:choice={
+    choice:'',
+    istrue:false,
+    img:''
+  };
+  submitted=false;
   constructor(private LanguageService:LanguageService,private _formBuilder: FormBuilder ) {}
 
   ngOnInit() {
@@ -53,13 +77,60 @@ export class NewLanguageComponent implements OnInit {
  
   
   print() {
-    this.printedOption =Array(Number(this.selectedOption)) ;
+    this.printedOption =Array(Number(this.language.nbrQuestions)) ;
     
   }
+  try(){
+    console.log(this.questions)
+  }
+ 
+
+  //add language
+  /*savelanguage(): void {
+    const data = {
+      name: this.language.name,
+      description: this.language.description,
+      version: this.language.version,
+      passScore:this.language.passScore,
+      category:this.language.category,
+      nbrQuestions:this.language.nbrQuestions,
+      imgsrc:this.language.imgsrc,
+      question:[]
+    };
+
+    this.LanguageService.create(data)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          console.log(res.id);
+          this.submitted = true;
+        },
+        error: (e) => {
+          console.log(e)
+  }});
+      this.nawlanguage();
+  }
+  nawlanguage():void{
+    this.submitted=false;
+    this.language={
+      "_id":"",
+      name:"",
+    description:'',
+    version: 1,
+    passScore:70,
+    category:'',
+    nbrQuestions:1,
+    imgsrc:'',
+    question:[]
+    }
+  }*/
+  puchquestions(){
+
+  }
+//add language
   addlanguage(){
-    this.LanguageService.addLanguage(this.language,this.question,this.choice).subscribe({
+    this.LanguageService.addLanguage(this.language).subscribe({
       next: (data)=>{
-        this.language=data;
         console.log(data);
       },
       error:(e)=>console.log(e)

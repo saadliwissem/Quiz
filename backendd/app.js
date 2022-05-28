@@ -12,10 +12,11 @@ var indexRouter = require('./routes/index');
 var app = express();
 ({ message: 'Client created' });
 app.use(logger('dev'));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
+app.use(express.json());
 
 
 app.use('/api', indexRouter);

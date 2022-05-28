@@ -20,7 +20,7 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let c of card;let i=index">
         <div class="card mb-3" style="max-width: 540px;">
-            <app-qcmcard Lname="{{card[i].name}}" lversion="{{card[i].version}}" passScore="{{card[i].passScore}}" description="{{card[i].description}}" imgsrc="{{card[i].imgsrc}}" category="{{card[i].category}}">
+            <app-qcmcard Lname="{{card[i].name}}" lversion="{{card[i].version}}" passScore="{{card[i].passScore}}" description="{{card[i].description}}" imgsrc="{{card[i].imgsrc}}" category="{{card[i].category}}" id="{{card[i]._id}}">
             </app-qcmcard>
         </div>
     </div>

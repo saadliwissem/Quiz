@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropQuestionsComponent implements OnInit {
   Anbq:number[];
+  choices=[];
   constructor() { }
 
   ngOnInit(): void {
   }
   printnbq(n:string){
     this.Anbq=Array(Number(n));
+  }
+  puch(){
+    
   }
 
 }

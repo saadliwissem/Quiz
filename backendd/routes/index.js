@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { getlanguages, createlanguage, readlanguage, deletelanguage, updatelanguage } = require('../controllers/language');
+const { getlanguages, readlanguage, deletelanguage, updatelanguage, createlanguage } = require('../controllers/language');
 const { getAllquestion, createquestion, readquestion, updatequestion, deletequestion } = require('../controllers/Question')
 const { getAllchoice, createchoice, readchoice, updatechoice, deletechoice } = require("../controllers/choice")
 

@@ -13,8 +13,8 @@ export class question{
         choice:choice[];
 
 }
-export class Language {
-    
+export class Language  {
+        "_id":any;
         name: string;
         version: number;
         nbrQuestions:number;
