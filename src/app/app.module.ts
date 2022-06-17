@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageService } from './language.service';
 import { HttpClientModule } from '@angular/common/http';
 
-//I keep the new line
 
 @NgModule({
   declarations: [

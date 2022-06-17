@@ -89,13 +89,12 @@
                     <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
                         <div class="card">
                             <div class="form-card">
-                                <div class="row justify-content-between text-left">
+                                <div class="row justify-content-between text-left" *ngFor="let o of printedOption;let i = index;">
                                     <mat-accordion>
-                                        <mat-expansion-panel *ngFor="let o of printedOption;let i = index;">
-                                            <input class="inputs" type="text" formControlName="seventhCtrl" matInput type="text" id="fname" #q placeholder="Question number {{i+1}}" required>
-                                            <div *ngIf="q.value.length>0">
-                                                {{questions.push(q.value)}}
-                                            </div>
+
+                                        <mat-expansion-panel>
+                                            <input #q class="inputs" type="text" formControlName="seventhCtrl" matInput type="text" placeholder="Question number {{i+1}}" required>
+                                            <button (click)="try(q.value)"> do</button>
                                             <mat-expansion-panel-header>
                                                 <mat-panel-description>
                                                     Question number {{i+1}}
@@ -125,7 +124,7 @@
 
 
         <div>
-            <button (click)="try()"> do</button>
+
             <button mat-button matStepperPrevious><mat-icon>arrow_left</mat-icon>Back</button>
             <button mat-button (click)="stepper.reset()">Reset <mat-icon>autorenew</mat-icon></button>
             <button mat-button style="float: right;">add the language <mat-icon>done</mat-icon></button>

@@ -16,7 +16,7 @@ import { LanguageService } from 'src/app/language.service';
 
 export class QCMComponent implements OnInit {
   
-  
+ 
   card:Language[]=[];
   constructor(private languageService : LanguageService) {
     
@@ -25,6 +25,7 @@ export class QCMComponent implements OnInit {
   
   ngOnInit() {
     this.reviewlanguages()
+    
   }
   reviewlanguages(){
     this.languageService.getLanguage()

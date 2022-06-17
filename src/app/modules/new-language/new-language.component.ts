@@ -19,6 +19,11 @@ import{Language,question,choice} from '../../models/language.model'
 })
 
 export class NewLanguageComponent implements OnInit {
+
+  
+
+
+
   x=50;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -29,7 +34,10 @@ export class NewLanguageComponent implements OnInit {
   categories=['web','programmation','design','security'];
   selectedcategory:string;
   panelOpenState = false;
-  questions=[];
+  questions=[{
+
+  }];
+  purequestions:[]
   language:Language={
     '_id':"",
     name:"",
@@ -40,6 +48,7 @@ export class NewLanguageComponent implements OnInit {
     nbrQuestions:20,
     imgsrc:'',
     question:[]
+    
   }
   question:question={
     question:'',
@@ -55,7 +64,6 @@ export class NewLanguageComponent implements OnInit {
   };
   submitted=false;
   constructor(private LanguageService:LanguageService,private _formBuilder: FormBuilder ) {}
-
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required],
@@ -74,17 +82,24 @@ export class NewLanguageComponent implements OnInit {
       
     });
   }
- 
   
   print() {
     this.printedOption =Array(Number(this.language.nbrQuestions)) ;
     
+    
   }
-  try(){
-    console.log(this.questions)
+  try(q){
+    this.question.question=q
+    this.language.question.push(this.question)
+    console.log(this.language.question)
+    
   }
+  put(){
+    this.purequestions.push()
+    console.log(this.purequestions)
+    
  
-
+  }
   //add language
   /*savelanguage(): void {
     const data = {
@@ -137,3 +152,5 @@ export class NewLanguageComponent implements OnInit {
     })
   }
 }
+
+

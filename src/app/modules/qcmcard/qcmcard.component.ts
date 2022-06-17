@@ -31,7 +31,7 @@ export class QcmcardComponent implements OnInit {
         next: (res) => {
           console.log(res);
           
-          this.router.navigate(['/qcm']);
+          window.location.reload();
         },
         error: (e) => console.error(e)
       });
